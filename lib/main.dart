@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
+import 'dart:async';
+
+final name = 'Index1Length1.wav';
 
 void main() {
   runApp(MyApp());
@@ -33,12 +36,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
-  static AudioCache player = AudioCache();
+  List<String> loadArray = ['button-1.mp3', 'Index1Length1.wav', 'Index1Length2.wav', 'Index1Length3.wav'];
 
   void _incrementCounter() {
     setState(() {
-      return Image(image: AssetImage('emerald.PNG'));
+      AudioCache player = AudioCache();
+      player.play(name);
     });
   }
 
